@@ -3,6 +3,8 @@ FROM node:5
 RUN git config --global user.email "git@localhost" && \
     git config --global user.name "git"
 
+RUN apt-get install unzip
+
 RUN mkdir -p /opt/resource/git && \
     wget https://github.com/concourse/git-resource/archive/master.zip -O /opt/resource/git/git-resource.zip && \
     unzip /opt/resource/git/git-resource.zip -d /opt/resource/git && \
